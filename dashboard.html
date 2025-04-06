@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillAlign - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard_style.css">
+    <!-- Simple Icons (replace with real icons later e.g., Font Awesome, SVGs) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="#" class="logo">SkillAlign</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">Dashboard</a></li>
+                    <li><a href="#">Market Trends</a></li>
+                    <li><a href="#">Skill Practice</a></li>
+                    <li><a href="#">Learning Path</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="search-bar">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Search skills or jobs...">
+                </div>
+                <button class="icon-button"><i class="fas fa-bell"></i></button>
+                <button class="icon-button user-avatar">
+                    <!-- Placeholder for user image/initials -->
+                    <i class="fas fa-user"></i>
+                </button>
+                 <span class="version-tag">v0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+        <div class="container">
+            <h1 class="dashboard-title">Dashboard</h1>
+
+            <!-- Labor Market Trends Card -->
+            <section class="card">
+                <div class="card-header">
+                    <h2>Labor Market Trends</h2>
+                    <p class="subtitle">Real-time job demand across different sectors and skills</p>
+                </div>
+                <div class="card-tabs">
+                    <button class="tab-button active">Job Trends</button>
+                    <button class="tab-button">Growing Skills</button>
+                </div>
+                <div class="card-content">
+                    <div class="chart-placeholder">
+                        <!-- Placeholder for the chart -->
+                        <img src="placeholder-chart.png" alt="Job Trends Chart Placeholder" style="width: 100%; height: 250px; object-fit: contain; opacity: 0.5;">
+                        <!-- In a real app, a JS charting library (Chart.js, D3, etc.) would render here -->
+                         <p style="text-align:center; color: #999; margin-top: 10px;">Chart visualization would appear here</p>
+                    </div>
+                    <p class="footnote">Data updated hourly from job boards and labor market APIs</p>
+                </div>
+            </section>
+
+            <!-- Skill Gap Analysis Card -->
+            <section class="card">
+                <div class="card-header">
+                    <h2>Skill Gap Analysis</h2>
+                    <p class="subtitle">Compare your skills with current market demand</p>
+                </div>
+                <div class="card-content list-style">
+                    <!-- Skill Item -->
+                    <div class="skill-gap-item">
+                        <div class="skill-info">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="tag tag-moderate">Moderate Gap</span>
+                            <span class="proficiency-label">Your Proficiency</span>
+                        </div>
+                        <div class="skill-demand">
+                            <span class="demand-values">75% / 90%</span>
+                            <span class="demand-label">Market Demand</span>
+                        </div>
+                         <div class="progress-bar-visual">
+                            <div class="bar-your-proficiency" style="width: 75%;"></div>
+                            <div class="bar-market-demand" style="width: 90%;"></div>
+                         </div>
+                    </div>
+                    <!-- Skill Item -->
+                    <div class="skill-gap-item">
+                        <div class="skill-info">
+                            <span class="skill-name">React</span>
+                            <span class="tag tag-high">High Gap</span>
+                             <span class="proficiency-label">Your Proficiency</span>
+                        </div>
+                        <div class="skill-demand">
+                            <span class="demand-values">60% / 85%</span>
+                            <span class="demand-label">Market Demand</span>
+                        </div>
+                         <div class="progress-bar-visual">
+                            <div class="bar-your-proficiency" style="width: 60%;"></div>
+                            <div class="bar-market-demand" style="width: 85%;"></div>
+                         </div>
+                    </div>
+                     <!-- Skill Item -->
+                    <div class="skill-gap-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Node.js</span>
+                             <span class="tag tag-high">High Gap</span>
+                             <span class="proficiency-label">Your Proficiency</span>
+                        </div>
+                        <div class="skill-demand">
+                            <span class="demand-values">50% / 80%</span>
+                            <span class="demand-label">Market Demand</span>
+                        </div>
+                         <div class="progress-bar-visual">
+                            <div class="bar-your-proficiency" style="width: 50%;"></div>
+                            <div class="bar-market-demand" style="width: 80%;"></div>
+                         </div>
+                    </div>
+                     <!-- Add SQL, AWS similarly -->
+                      <div class="skill-gap-item">
+                        <div class="skill-info">
+                            <span class="skill-name">SQL</span>
+                             <!-- Add Gap Tag -->
+                             <span class="proficiency-label">Your Proficiency</span>
+                        </div>
+                        <div class="skill-demand">
+                            <span class="demand-values">70% / 75%</span>
+                            <span class="demand-label">Market Demand</span>
+                        </div>
+                         <div class="progress-bar-visual">
+                            <div class="bar-your-proficiency" style="width: 70%;"></div>
+                            <div class="bar-market-demand" style="width: 75%;"></div>
+                         </div>
+                    </div>
+                      <div class="skill-gap-item">
+                        <div class="skill-info">
+                            <span class="skill-name">AWS</span>
+                            <span class="tag tag-high">High Gap</span>
+                             <span class="proficiency-label">Your Proficiency</span>
+                        </div>
+                        <div class="skill-demand">
+                            <span class="demand-values">40% / 85%</span>
+                            <span class="demand-label">Market Demand</span>
+                        </div>
+                         <div class="progress-bar-visual">
+                            <div class="bar-your-proficiency" style="width: 40%;"></div>
+                            <div class="bar-market-demand" style="width: 85%;"></div>
+                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Combined Section for Simulator and Recommendations -->
+            <div class="dashboard-grid">
+                <!-- Skill Practice Simulator Card -->
+                <section class="card">
+                    <div class="card-header">
+                        <h2>Skill Practice Simulator</h2>
+                        <p class="subtitle">Practice real-world scenarios based on current market demands</p>
+                    </div>
+                     <div class="card-tabs">
+                        <button class="tab-button active">Technical Skills</button>
+                        <button class="tab-button">Soft Skills</button>
+                    </div>
+                    <div class="card-content list-style">
+                        <!-- Practice Item -->
+                        <div class="practice-item">
+                            <div class="practice-header">
+                                <span class="practice-title">React Component Optimization</span>
+                                <span class="tag tag-difficulty-intermediate">intermediate</span>
+                            </div>
+                            <p class="practice-description">A client reports that their React application is running slowly. Identify and fix performance issues.</p>
+                            <span class="practice-duration"><i class="far fa-clock"></i> 20 min</span>
+                        </div>
+                        <!-- Practice Item -->
+                        <div class="practice-item">
+                            <div class="practice-header">
+                                <span class="practice-title">Database Query Optimization</span>
+                                <span class="tag tag-difficulty-advanced">advanced</span>
+                            </div>
+                            <p class="practice-description">Optimize a slow SQL query that is causing performance issues in a production application.</p>
+                            <span class="practice-duration"><i class="far fa-clock"></i> 30 min</span>
+                        </div>
+                         <!-- Add more practice items if needed -->
+                    </div>
+                </section>
+
+                <!-- Recommended Learning Card -->
+                <section class="card">
+                    <div class="card-header">
+                        <h2>Recommended Learning</h2>
+                        <p class="subtitle">Courses aligned with your skill gaps and market trends</p>
+                    </div>
+                    <div class="card-content list-style">
+                        <!-- Recommendation Item -->
+                        <div class="recommendation-item">
+                           <div class="rec-details">
+                                <span class="rec-title">Advanced React Patterns</span>
+                                <span class="rec-provider">Frontend Masters</span>
+                                <div class="rec-meta">
+                                     <span class="tag tag-relevance-high">High</span>
+                                     <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                                </div>
+                           </div>
+                           <div class="rec-action">
+                               <span class="tag tag-fills-gap">Fills Skill Gap</span>
+                               <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                           </div>
+                        </div>
+                        <!-- Recommendation Item -->
+                        <div class="recommendation-item">
+                           <div class="rec-details">
+                                <span class="rec-title">AWS Cloud Practitioner</span>
+                                <span class="rec-provider">A Cloud Guru</span>
+                                <div class="rec-meta">
+                                     <span class="tag tag-relevance-very-high">Very High</span>
+                                     <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                                </div>
+                           </div>
+                           <div class="rec-action">
+                               <span class="tag tag-fills-gap">Fills Skill Gap</span>
+                               <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                           </div>
+                        </div>
+                        <!-- Recommendation Item -->
+                        <div class="recommendation-item">
+                           <div class="rec-details">
+                                <span class="rec-title">SQL Performance Tuning</span>
+                                <span class="rec-provider">Pluralsight</span>
+                                <div class="rec-meta">
+                                     <span class="tag tag-relevance-medium">Medium</span>
+                                     <span class="rating"><i class="fas fa-star"></i> 4.6</span>
+                                </div>
+                           </div>
+                           <div class="rec-action">
+                               <!-- No gap tag shown in mockup -->
+                               <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button button-secondary">View All Recommendations</button>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Your Progress Card -->
+            <section class="card">
+                 <div class="card-header">
+                    <h2>Your Progress</h2>
+                    <p class="subtitle">Track your skill development journey</p>
+                </div>
+                 <div class="card-content list-style">
+                     <!-- Progress Item -->
+                     <div class="progress-item">
+                         <div class="progress-info">
+                             <span class="skill-name">JavaScript</span>
+                             <span class="tag tag-level-advanced">Advanced</span>
+                             <div class="progress-bar-container">
+                                 <div class="progress-bar" style="width: 75%;"></div>
+                             </div>
+                             <span class="progress-percentage">75% complete</span>
+                         </div>
+                         <div class="progress-action">
+                             <span class="exercise-count">12/20 exercises</span>
+                             <a href="#" class="continue-link">Continue learning <i class="fas fa-arrow-right"></i></a>
+                         </div>
+                     </div>
+                      <!-- Progress Item -->
+                     <div class="progress-item">
+                         <div class="progress-info">
+                             <span class="skill-name">React</span>
+                             <span class="tag tag-level-intermediate">Intermediate</span>
+                             <div class="progress-bar-container">
+                                 <div class="progress-bar" style="width: 60%;"></div>
+                             </div>
+                             <span class="progress-percentage">60% complete</span>
+                         </div>
+                         <div class="progress-action">
+                             <span class="exercise-count">6/15 exercises</span>
+                             <a href="#" class="continue-link">Continue learning <i class="fas fa-arrow-right"></i></a>
+                         </div>
+                     </div>
+                      <!-- Progress Item -->
+                     <div class="progress-item">
+                         <div class="progress-info">
+                             <span class="skill-name">Node.js</span>
+                             <span class="tag tag-level-intermediate">Intermediate</span>
+                              <div class="progress-bar-container">
+                                 <div class="progress-bar" style="width: 50%;"></div>
+                             </div>
+                             <span class="progress-percentage">50% complete</span>
+                         </div>
+                         <div class="progress-action">
+                             <span class="exercise-count">5/10 exercises</span>
+                             <a href="#" class="continue-link">Continue learning <i class="fas fa-arrow-right"></i></a>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="card-footer">
+                     <button class="button button-secondary">View Detailed Progress Report</button>
+                 </div>
+            </section>
+
+        </div>
+    </main>
+
+</body>
+</html>

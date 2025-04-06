@@ -1,0 +1,434 @@
+/* --- Global Resets & Variables --- */
+:root {
+    --primary-color: #4A90E2; /* Example Blue */
+    --secondary-color: #50E3C2; /* Example Teal/Green */
+    --accent-color: #F5A623; /* Example Orange */
+    --text-color: #333;
+    --text-light: #555;
+    --text-lighter: #777;
+    --border-color: #e0e0e0;
+    --light-gray-bg: #f8f9fa; /* Background for the page */
+    --card-bg: #ffffff;
+    --tag-moderate-bg: #ffe0b2; /* Light orange */
+    --tag-moderate-text: #e65100; /* Dark orange */
+    --tag-high-bg: #ffcdd2; /* Light red */
+    --tag-high-text: #c62828; /* Dark red */
+    --tag-difficulty-bg: #e1f5fe; /* Light blue */
+    --tag-difficulty-text: #0277bd; /* Dark blue */
+     --tag-level-bg: #c8e6c9; /* Light green */
+     --tag-level-text: #2e7d32; /* Dark green */
+     --tag-fills-gap-bg: #d1c4e9; /* Light purple */
+     --tag-fills-gap-text: #4527a0; /* Dark purple */
+    --font-family: 'Inter', sans-serif;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --box-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-gray-bg);
+    font-size: 14px; /* Base font size similar to mockups */
+}
+
+/* --- Utility Classes --- */
+.container {
+    max-width: 1200px; /* Slightly wider container */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.3;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+h1.dashboard-title {
+    font-size: 1.8rem; /* 28px */
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+h2 { font-size: 1.1rem; /* 18px */ font-weight: 500; margin-bottom: 4px; }
+h3 { font-size: 1rem; /* 16px */ }
+h4 { font-size: 0.9rem; /* 14px */ }
+
+p { margin-bottom: 15px; color: var(--text-light); }
+p.subtitle { font-size: 0.85rem; color: var(--text-lighter); margin-bottom: 0; }
+p.footnote { font-size: 0.75rem; color: var(--text-lighter); margin-top: 15px; text-align: center; }
+
+a { text-decoration: none; color: var(--primary-color); transition: color 0.2s ease; }
+a:hover { color: #3a7ac1; }
+
+/* --- Header --- */
+.site-header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.main-nav a {
+    color: var(--text-light);
+    font-weight: 500;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+.main-nav a:hover {
+    color: var(--text-color);
+}
+.main-nav a.active {
+    color: var(--text-color);
+    border-bottom-color: var(--primary-color);
+}
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.search-bar .search-icon {
+    position: absolute;
+    left: 10px;
+    color: var(--text-lighter);
+    font-size: 0.9rem;
+}
+.search-bar input {
+    padding: 8px 15px 8px 35px; /* Left padding for icon */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 0.85rem;
+    min-width: 220px;
+    background-color: var(--light-gray-bg);
+     transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: var(--card-bg);
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    transition: color 0.2s ease;
+}
+.icon-button:hover { color: var(--text-color); }
+.user-avatar { /* Add specific styling if using image/initials */
+     background-color: var(--light-gray-bg);
+     width: 32px;
+     height: 32px;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 1rem;
+}
+.version-tag {
+    font-size: 0.7rem;
+    color: var(--text-lighter);
+    background-color: var(--light-gray-bg);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+/* --- Dashboard Main Area --- */
+.dashboard-main {
+    padding: 30px 0;
+}
+
+/* --- Cards --- */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 25px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden; /* Ensure contents respect border radius */
+     transition: box-shadow 0.3s ease;
+}
+.card:hover {
+     /* Optional: subtle hover effect */
+    /* box-shadow: var(--box-shadow-hover); */
+}
+
+.card-header { padding: 15px 20px; border-bottom: 1px solid var(--border-color); }
+.card-content { padding: 20px; }
+.card-content.list-style { padding: 0; /* Remove padding for list items to span full width */ }
+.card-footer {
+    padding: 15px 20px;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--light-gray-bg); /* Footer slight difference */
+    text-align: center;
+}
+
+/* --- Tabs --- */
+.card-tabs {
+    padding: 10px 20px 0 20px; /* Padding above tabs */
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    gap: 20px;
+}
+.tab-button {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 8px 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: -1px; /* Overlap border */
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+.tab-button:hover { color: var(--text-color); }
+.tab-button.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* --- Chart Placeholder --- */
+.chart-placeholder {
+    /* Styles for the chart container */
+    min-height: 250px; /* Ensure space is reserved */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* Background pattern or message */
+    /* background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 5px, #e9e9e9 5px, #e9e9e9 10px); */
+}
+
+/* --- Tags --- */
+.tag {
+    display: inline-block;
+    font-size: 0.75rem; /* 12px */
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 12px; /* Pill shape */
+    line-height: 1.4;
+    margin-left: 8px;
+}
+.tag-moderate { background-color: var(--tag-moderate-bg); color: var(--tag-moderate-text); }
+.tag-high { background-color: var(--tag-high-bg); color: var(--tag-high-text); }
+.tag-difficulty-intermediate { background-color: var(--tag-difficulty-bg); color: var(--tag-difficulty-text); }
+.tag-difficulty-advanced { background-color: var(--tag-difficulty-bg); color: var(--tag-difficulty-text); } /* Same style for now */
+.tag-level-advanced { background-color: var(--tag-level-bg); color: var(--tag-level-text); }
+.tag-level-intermediate { background-color: var(--tag-level-bg); color: var(--tag-level-text); } /* Same style for now */
+.tag-fills-gap { background-color: var(--tag-fills-gap-bg); color: var(--tag-fills-gap-text); font-size: 0.7rem; }
+.tag-relevance-high, .tag-relevance-very-high, .tag-relevance-medium { /* Basic style, adjust colors if needed */
+     background-color: #eee; color: #555; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; margin-right: 5px;
+}
+.rating { font-size: 0.8rem; color: var(--accent-color); }
+.rating i { margin-right: 3px; }
+
+/* --- Skill Gap Analysis --- */
+.skill-gap-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+     position: relative; /* For progress bars */
+}
+.skill-gap-item:last-child { border-bottom: none; }
+
+.skill-info { flex-grow: 1; }
+.skill-name { font-weight: 500; display: block; margin-bottom: 4px; }
+.proficiency-label { font-size: 0.8rem; color: var(--text-lighter); display: block; margin-top: 4px; }
+.skill-info .tag { margin-left: 0; margin-bottom: 4px; } /* Adjust tag position */
+
+.skill-demand { text-align: right; }
+.demand-values { font-weight: 500; display: block; margin-bottom: 4px; }
+.demand-label { font-size: 0.8rem; color: var(--text-lighter); display: block; }
+
+/* Visual Bar Representation (Optional, simple version) */
+.progress-bar-visual {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px; /* Height of the visual bar */
+    background-color: #f0f0f0; /* Background track */
+     opacity: 0.5;
+}
+.bar-your-proficiency {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: var(--primary-color); /* Color for user proficiency */
+    border-radius: 3px; /* Rounded corners */
+}
+.bar-market-demand {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: var(--text-lighter); /* Color for market demand */
+    z-index: -1; /* Behind user proficiency */
+    border-radius: 3px;
+}
+
+/* --- Dashboard Grid (for side-by-side cards) --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid */
+    gap: 25px;
+}
+
+/* --- Skill Practice Simulator --- */
+.practice-item { padding: 15px 20px; border-bottom: 1px solid var(--border-color); }
+.practice-item:last-child { border-bottom: none; }
+.practice-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.practice-title { font-weight: 500; }
+.practice-description { font-size: 0.85rem; color: var(--text-light); margin-bottom: 10px; }
+.practice-duration { font-size: 0.8rem; color: var(--text-lighter); }
+.practice-duration i { margin-right: 5px; }
+
+/* --- Recommended Learning --- */
+.recommendation-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items top */
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+.recommendation-item:last-child { border-bottom: none; }
+.rec-details { flex-grow: 1; margin-right: 15px; }
+.rec-title { font-weight: 500; display: block; margin-bottom: 4px; }
+.rec-provider { font-size: 0.8rem; color: var(--text-lighter); display: block; margin-bottom: 6px; }
+.rec-meta { display: flex; align-items: center; gap: 8px; }
+.rec-action { text-align: right; flex-shrink: 0; }
+.rec-action .tag { display: block; margin-bottom: 8px; }
+.external-link { font-size: 1.1rem; color: var(--text-light); }
+.external-link:hover { color: var(--primary-color); }
+
+/* --- Your Progress --- */
+.progress-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+    gap: 20px;
+}
+.progress-item:last-child { border-bottom: none; }
+.progress-info { flex-grow: 1; }
+.progress-info .skill-name { display: inline-block; margin-right: 8px; margin-bottom: 6px; } /* Adjust layout */
+.progress-info .tag { vertical-align: middle; }
+.progress-percentage { font-size: 0.8rem; color: var(--text-lighter); display: block; margin-top: 4px; }
+
+.progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 6px;
+}
+.progress-bar {
+    height: 100%;
+    background-color: var(--secondary-color); /* Use a distinct progress color */
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.progress-action { text-align: right; flex-shrink: 0; }
+.exercise-count { font-size: 0.85rem; color: var(--text-light); display: block; margin-bottom: 6px; }
+.continue-link { font-size: 0.85rem; font-weight: 500; color: var(--primary-color); }
+.continue-link i { margin-left: 4px; transition: transform 0.2s ease; }
+.continue-link:hover i { transform: translateX(3px); }
+
+/* --- Buttons --- */
+.button {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    border: 1px solid transparent;
+    font-size: 0.85rem;
+}
+.button-secondary {
+    background-color: transparent;
+    color: var(--text-light);
+    border-color: var(--border-color);
+}
+.button-secondary:hover {
+    background-color: var(--card-bg);
+     border-color: #ccc;
+     color: var(--text-color);
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 992px) {
+    .header-container { flex-wrap: wrap; }
+    .main-nav { order: 3; width: 100%; margin-top: 10px; justify-content: center; }
+    .header-actions { order: 2; }
+    h1.dashboard-title { font-size: 1.6rem; }
+}
+
+@media (max-width: 768px) {
+    .search-bar input { min-width: 180px; }
+    .header-actions { gap: 10px; }
+    .dashboard-grid { grid-template-columns: 1fr; } /* Stack grid items */
+    .skill-gap-item, .progress-item { flex-direction: column; align-items: flex-start; text-align: left; }
+    .skill-demand, .progress-action { text-align: left; margin-top: 10px; }
+    .progress-bar-visual { /* Adjust bar positioning */
+        position: relative;
+        width: 100%;
+        margin-top: 10px;
+        height: 10px;
+    }
+     .bar-your-proficiency, .bar-market-demand { height: 100%;}
+
+}
+
+@media (max-width: 576px) {
+    body { font-size: 13px; }
+     h1.dashboard-title { font-size: 1.4rem; }
+     h2 { font-size: 1rem; }
+    .container { padding: 0 15px; }
+    .main-nav ul { gap: 15px; flex-wrap: wrap; justify-content: center;}
+    .search-bar { display: none; } /* Hide search on very small screens or implement differently */
+    .card-header, .card-content, .card-footer, .practice-item, .recommendation-item, .progress-item, .skill-gap-item { padding: 15px; }
+    .card-tabs { padding: 10px 15px 0 15px; }
+    .tag { font-size: 0.7rem; padding: 2px 6px; }
+}
